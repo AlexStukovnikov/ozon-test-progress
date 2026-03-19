@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    overflow: hidden;
+}
 
 body {
     display: flex;
@@ -12,16 +15,18 @@ body {
     font-family: sans-serif;
     min-height: 100vh;
     padding: 1rem;
+    overscroll-behavior: none;
 }
 
 .progress__container {
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
     background-color: #feffff;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 900px;
+    max-height: 900px;
     width: 100%;
+    min-height: 90vh;
     padding: 1rem;
 }
 
@@ -54,7 +59,8 @@ body {
 
 .control__input {
     width: 50px;
-    padding: calc((32px - 1.1 * 18px - 3px) / 2);
+    height: 32px;
+    padding: 0 8px;
     font-size: 1.1rem;
     font-weight: bold;
     border: 1.5px solid #b2b2b3;
