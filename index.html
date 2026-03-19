@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress Bar Component</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="progress__container">
+            <p class="progress__title">Progress</p>
+            <div class="progress__wrapper">
+                <!-- <div class="progress__bar" id="bar"></div> -->
+                <div class="square"></div>
+                <div class="progress__controls">
+                    <div class="control">
+                        <input class="control__input" type="number" id="value" min="0" max="100" value="50" />
+                        <span class="control__text">Value</span>
+                    </div>
+                    <div class="switch">
+                        <label class="switch__track">
+                            <input class="switch__checkbox" type="checkbox" id="animate" />
+                            <span class="switch__slider"></span>
+                        </label>
+                        <span class="switch__text">Animate</span>
+                    </div>
+                    <div class="switch">
+                        <label class="switch__track">
+                            <input class="switch__checkbox" type="checkbox" id="hide" />
+                            <span class="switch__slider"></span>
+                        </label>
+                        <span class="switch__text">Hide</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
