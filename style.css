@@ -14,13 +14,6 @@ body {
     padding: 1rem;
 }
 
-.square {
-    background-color: black;
-    height: min(120px, 35vh);
-    width: min(120px, 35vh);
-    aspect-ratio: 1;
-}
-
 .progress__container {
     min-height: 90vh;
     display: flex;
