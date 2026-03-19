@@ -3,6 +3,7 @@ class ProgressBar {
         this.container = container;
         this.options = {
             color: '#005dff',
+            bgColor: '#eff3f7',
             strokeWidth: 8,
             size: 160,
             radius: 40,
@@ -35,7 +36,7 @@ class ProgressBar {
         this.bgCircle.setAttribute('cy', '50');
         this.bgCircle.setAttribute('r', this.options.radius);
         this.bgCircle.setAttribute('fill', 'none');
-        this.bgCircle.setAttribute('stroke', '#eff3f7');
+        this.bgCircle.setAttribute('stroke', this.options.bgColor);
         this.bgCircle.setAttribute('stroke-width', this.options.strokeWidth);
 
         this.circle = document.createElementNS(svgNS, 'circle');
@@ -82,7 +83,7 @@ class ProgressBar {
     }
 }
 
-const progressContainer = document.querySelector('#bar')
+const progressContainer = document.querySelector('#bar');
 const valueEl = document.querySelector('#value');
 const animateEl = document.querySelector('#animate');
 const hideEl = document.querySelector('#hide');
