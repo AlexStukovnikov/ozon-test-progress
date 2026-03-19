@@ -48,6 +48,7 @@ class ProgressBar {
         this.circle.setAttribute('stroke-dasharray', this._circumference());
         this.circle.setAttribute('stroke-dashoffset', this._circumference());
         this.circle.setAttribute('transform', 'rotate(-90 50 50)');
+        this.circle.style.transition = 'stroke-dashoffset 0.3s ease-in-out';
 
         this.svg.appendChild(this.bgCircle);
         this.svg.appendChild(this.circle);
@@ -72,7 +73,7 @@ class ProgressBar {
 
     setAnimated(flag) {
         this.animated = flag;
-        this.svg.style.animation = flag ? 'spin 2s linear infinite' : 'none';
+        this.svg.style.animation = flag ? 'spin 1.5s linear infinite' : 'none';
     }
 
     setHidden(flag) {
