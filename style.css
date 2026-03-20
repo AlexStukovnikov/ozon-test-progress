@@ -1,3 +1,4 @@
+/* ===== Общие сбросы и основные настройки ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +18,7 @@ body {
     padding: 1rem;
 }
 
+/* ===== Общий контейнер (название и  основной блок) ===== */
 .progress__container {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,7 @@ body {
     font-weight: bold;
 }
 
+/* ===== Основной блок ===== */
 .progress__wrapper {
     display: flex;
     flex-direction: row;
@@ -42,6 +45,7 @@ body {
     gap: 1.5rem;
 }
 
+/* ===== Блок с элементами управления ===== */
 .progress__controls {
     display: flex;
     flex-direction: column;
@@ -49,6 +53,7 @@ body {
     justify-content: center;
 }
 
+/* ===== Блок поля ввода ===== */
 .control {
     display: inline-flex;
     align-items: baseline;
@@ -68,6 +73,7 @@ body {
     transition: border-color 0.2s;
 }
 
+/* ===== Отключение стрелок у числового поля ввода ===== */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -79,6 +85,7 @@ input::-webkit-inner-spin-button {
     border-color: #005dff;
 }
 
+/* ===== Переключатель ===== */
 .switch {
     display: inline-flex;
     gap: 1.5rem;
@@ -139,6 +146,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 
+/* ===== Анимация вращения ===== */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -148,6 +156,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
+/* ===== Адаптация под портретную (вертикальную) ориентацию ===== */
 @media (orientation: portrait) {
     .progress__container {
         gap: 2rem;

@@ -1,5 +1,15 @@
 class ProgressBar {
     constructor(container, options = {}) {
+        /**
+         * @param {HTMLElement} container - DOM-элемент для размещения прогресс-бара
+         * @param {Object} [options] - настройки внешнего вида
+         * @param {string} [options.color='#005dff'] - цвет активной дуги
+         * @param {string} [options.bgColor='#eff3f7'] - цвет фоновой дуги (остаток)
+         * @param {number} [options.strokeWidth=8] - толщина линии в единицах viewBox
+         * @param {number} [options.size=160] - размер контейнера в пикселях
+         * @param {number} [options.radius=40] - радиус круга в единицах viewBox
+         * @param {number} [options.initialValue=50] - начальное значение дуги (0–100)
+         */
         this.container = container;
         this.options = {
             color: '#005dff',
@@ -23,6 +33,10 @@ class ProgressBar {
         this.setValue(this.value);
     }
 
+    /**
+     * Создаёт SVG-структуру
+     * @private
+     */
     _initSVG() {
         const svgNS = 'http://www.w3.org/2000/svg';
         this.svg = document.createElementNS(svgNS, 'svg');
@@ -56,15 +70,28 @@ class ProgressBar {
         this.container.appendChild(this.svg);
     }
 
+    /**
+     * Длина окружности для текущего радиуса.
+     * @returns {number}
+     * @private
+     */
     _circumference() {
         return 2 * Math.PI * this.options.radius;
     }
 
+    /**
+     * Обновляет длину дуги в соответствии с текущим значением value.
+     * @private
+     */
     _updateProgress() {
         const offset = this._circumference() * (1 - this.value / 100);
         this.circle.setAttribute('stroke-dashoffset', offset);
     }
 
+    /**
+     * Устанавливает значение прогресса (0–100). Некорректные значения приводятся к границам.
+     * @param {number|string} val - новое значение прогресса
+     */
     setValue(val) {
         let num = Number(val);
         if (isNaN(num)) num = 0;
@@ -72,17 +99,26 @@ class ProgressBar {
         this._updateProgress();
     }
 
+    /**
+     * Включает/выключает анимацию вращения дуги.
+     * @param {boolean} flag - true для включения, false для выключения
+     */
     setAnimated(flag) {
         this.animated = flag;
         this.svg.style.animation = flag ? 'spin 1.5s linear infinite' : 'none';
     }
 
+    /**
+     * Показывает/скрывает блок прогресса.
+     * @param {boolean} flag - true для скрытия, false для показа
+     */
     setHidden(flag) {
         this.hidden = flag;
         this.container.style.display = flag ? 'none' : '';
     }
 }
 
+// ===== Инициализация и создание блока для демо =====
 const progressContainer = document.querySelector('#bar');
 const valueEl = document.querySelector('#value');
 const animateEl = document.querySelector('#animate');
