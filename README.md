@@ -2,11 +2,11 @@
 
 Компонент - круговая диаграмма прогресса, предназначена для мобильных веб-приложений: отображает ход выполнения процесса в виде дуги, управляется через API, поддерживает три состояния (Normal, Animated, Hidden).
 
-![Portrait image](images\Portrait.png)
+![Portrait image](./images/Portrait.png)
 
 *Вертикальная ориентация (Portrait)*
 
-![Landscape image](images\Landscape.png)
+![Landscape image](./images/Landscape.png)
 
 *Горизонтальная ориентация (Landscape)*
 
