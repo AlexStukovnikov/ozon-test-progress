@@ -15,7 +15,6 @@ body {
     font-family: sans-serif;
     min-height: 100vh;
     padding: 1rem;
-    overscroll-behavior: none;
 }
 
 .progress__container {
